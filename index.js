@@ -2,9 +2,11 @@ console.log("welcome to Rock, Paper, Scissors");
 
 
 //returning either rock, paper or scissors
-function computerPlay(rock, paper, scissors){s
-    return rock || paper || scissors
-}
+var computerPlay = ["rock", "paper", "scissors"]
+
+var computerChoice = computerPlay[Math.floor(Math.random() * computerPlay.length)];
+
+console.log(computerChoice)
 
 function playRound(playerSelection, computerSelection) {
     // your code here!
