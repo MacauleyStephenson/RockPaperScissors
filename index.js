@@ -1,7 +1,9 @@
 console.log("welcome to Rock, Paper, Scissors");
 
-function computerPlay(){
 
+//returning either rock, paper or scissors
+function computerPlay(rock, paper, scissors){s
+    return rock || paper || scissors
 }
 
 function playRound(playerSelection, computerSelection) {
