@@ -6,22 +6,17 @@ function computerPlay(){
  const computerArray = ["rock", "paper", "scissors"] 
 const computerChoice = Math.floor(Math.random() * computerArray.length);
 console.log(computerChoice)
-return computerArray[computerChoice]
+return computerArray[computerChoice];
 } 
 
-
+function playerPlay(){
+  console.log("Do you choose ")
+}
 
 function playRound(playerSelection, computerSelection) {
     if (computerSelection.toLowerCase() === playerSelection.toLowerCase()){
       console.log("Its a draw!!!");
-  //   }else if{
-
-  //   }else if{
-
-  //   }
-        
-  //     }
-  //   }
+    return("Your choice " + playerSelection);
     }
  }
   
