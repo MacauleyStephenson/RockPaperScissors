@@ -11,15 +11,28 @@ return computerArray[computerChoice];
 
 //Player input
 function playerPlay(){
-  console.log("Do you choose Rock(1), Paper(2) or Scissors(3)");
-  let playerChoice = prompt();
+  console.log("Do you choose Rock(1), Paper(2) or Scissors(3) ?");
+  let playerChoice = prompt("Do you choose Rock(1), Paper(2) or Scissors(3) ?");
+  if (playerChoice.toLowerCase() === "rock" || parseInt(playerChoice()) === 1){ 
+    playerChoice = 'rock'
+  }else if(playerChoice.toLowerCase() === "paper" || parseInt(playerChoice()) === 2){
+    playerChoice = 'paper'
+  }else if(playerChoice.toLowerCase() === "scissors" || parseInt(playerChoice()) === 3){
+    playerChoice = 'scissors'
+} else if(playerChoice.toLowerCase() !== "rock" || "scissors" ||"paper" || parseInt(playerChoice() !== (1) || (2) || (3)))  {
+alert("PLease enter your selection again")
+playerSelection();
+}else{
+  console.log("Not sure what you're doing try again");
+}
+return playerChoice();
 }
 
 //Play a round
 function playRound(playerSelection, computerSelection) {
     if (computerSelection.toLowerCase() === playerSelection.toLowerCase()){
       console.log("Its a draw!!!");
-    return("Your choice " + playerSelection);
+    return("Your choice is " + playerSelection);
     }
  }
   
