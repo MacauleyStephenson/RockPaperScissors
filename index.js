@@ -23,7 +23,7 @@ function playerPlay(){
 alert("PLease enter your selection again")
 playerSelection();
 }else{
-  console.log("Not sure what you're doing try again");
+  console.log("Not sure what you're doing, try again");
 }
 return playerChoice();
 }
@@ -32,16 +32,22 @@ return playerChoice();
 function playRound(playerSelection, computerSelection) {
     if (computerSelection.toLowerCase() === playerSelection.toLowerCase()){
       console.log("Its a draw!!!");
-    return("Your choice is " + playerSelection);
-    }
- }
+    return("Your choice is " + playerSelection + ". " + "Computer " + computerSelection);
+    }else if(computerSelection.toLowerCase() === "rock" && playerSelection.toLowerCase() ){
+      console.log("Rock beats scissors, you loose ")
+      return("Your choice: " + playerSelection )
+    }else if(computerSelection.toLowerCase() === "scissors" && playerSelection.toLowerCase()){
+
+    }     
+  }
+ 
   
   const playerSelection = "rock";
   const computerSelection = computerPlay();
   console.log(playRound(playerSelection, computerSelection));
 
 
-  // Takes amount of max rounds to be played per 1 match
+  // Takes amount of 5 rounds to be played per 1 match
   const playGame = () => {
     for (let i = 0; i < 5; i++) {
       playRound();
