@@ -5,7 +5,6 @@ console.log("Welcome to Rock, Paper, Scissors");
 function computerPlay(){
 const computerArray = ["rock", "paper", "scissors"] 
 const computerChoice = Math.floor(Math.random() * computerArray.length);
-console.log(computerChoice)
 return computerArray[computerChoice];
 } 
 
@@ -13,20 +12,23 @@ return computerArray[computerChoice];
 function playerPlay(){
   console.log("Do you choose Rock(1), Paper(2) or Scissors(3) ?");
   let playerChoice = prompt("Do you choose Rock(1), Paper(2) or Scissors(3) ?");
-  if (playerChoice.toLowerCase() === "rock" || parseInt(playerChoice()) === 1){ 
+  if (playerChoice.toLowerCase() === "rock" || parseInt(playerChoice) === 1){ 
     playerChoice = 'rock'
-  }else if(playerChoice.toLowerCase() === "paper" || parseInt(playerChoice()) === 2){
+  }else if(playerChoice.toLowerCase() === "paper" || parseInt(playerChoice) === 2){
     playerChoice = 'paper'
-  }else if(playerChoice.toLowerCase() === "scissors" || parseInt(playerChoice()) === 3){
+  }else if(playerChoice.toLowerCase() === "scissors" || parseInt(playerChoice) === 3){
     playerChoice = 'scissors'
-} else if(playerChoice.toLowerCase() !== "rock" || "scissors" ||"paper" || parseInt(playerChoice() !== (1) || (2) || (3)))  {
+} else if(playerChoice.toLowerCase() !== "rock" || "scissors" ||"paper" || parseInt(playerChoice !== 1 || 2 || 3))  {
 alert("PLease enter your selection again")
 playerSelection();
 }else{
   console.log("Not sure what you're doing, try again");
 }
-return playerChoice();
+return playerChoice;
 }
+
+ const playerSelection = playerPlay();
+  const computerSelection = computerPlay();
 
 //Play a round
 function playRound(playerSelection, computerSelection) {
@@ -51,18 +53,16 @@ function playRound(playerSelection, computerSelection) {
     }else if(computerSelection.toLowerCase() === "paper" && playerSelection.toLowerCase() === "scissors"){
       console.log("scissors beats paper, you won!")
       return("Your choice: " + playerSelection + ". " + "Computer: " + computerSelection);
+    } else {
+      console.log("Something went wrong, please try again!");
     }
   }
  
-  
-  const playerSelection = "rock";
-  const computerSelection = computerPlay();
-  console.log(playRound(playerSelection, computerSelection));
-
-
-  // Takes amount of 5 rounds to be played per 1 match
-  const playGame = () => {
+  function game() {
+    //Play game 5 times
     for (let i = 0; i < 5; i++) {
-      playRound();
-   }
-  }
+      // Call playRound function, passing in newly returned values
+      // from the playerPlay and computerPlay functions and log to console
+      console.log(playRound(playerPlay(), computerPlay()));
+    }
+ }
