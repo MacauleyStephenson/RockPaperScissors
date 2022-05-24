@@ -32,13 +32,16 @@ return playerChoice();
 function playRound(playerSelection, computerSelection) {
     if (computerSelection.toLowerCase() === playerSelection.toLowerCase()){
       console.log("Its a draw!!!");
-    return("Your choice is " + playerSelection + ". " + "Computer " + computerSelection);
-    }else if(computerSelection.toLowerCase() === "rock" && playerSelection.toLowerCase() ){
-      console.log("Rock beats scissors, you loose ")
-      return("Your choice: " + playerSelection )
-    }else if(computerSelection.toLowerCase() === "scissors" && playerSelection.toLowerCase()){
-
-    }     
+    return("Your choice is " + playerSelection + ". " + "Computer: " + computerSelection);
+    }else if(computerSelection.toLowerCase() === "rock" && playerSelection.toLowerCase() === "scissors" ){
+      console.log("Rock beats scissors, you loose! ") 
+      return("Your choice: " + playerSelection + ". " + "Computer: " + computerSelection);
+    }else if(computerSelection.toLowerCase() === "scissors" && playerSelection.toLowerCase() === "rock"){
+      console.log("Rock beats scissors, you won!")
+      return("Your choice: " + playerSelection + ". " + "Computer: " + computerSelection);
+    }else if(computerSelection.toLowerCase() === "scissors" && playerSelection.toLowerCase() === "paper")
+    console.log("scissors beats paper, you loose!")
+    return("Your choice: " + playerSelection + ". " + "Computer: " + computerSelection);
   }
  
   
