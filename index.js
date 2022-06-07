@@ -33,6 +33,38 @@ function playRound(playerSelection, computerSelection) {
 
 }
 
+function nashe(playerSelection, computerSelection) {
+	if (playerSelection === computerSelection) {
+		boxVs.style.outlineColor = '#D096FF';
+	} else if (playerSelection === "rock" && computerSelection === "scissors") {
+		player++;
+		boxVs.style.outlineColor = '#0CA445';
+	} else if (playerSelection === "scissors" && computerSelection === "rock") {
+		player++;
+		boxVs.style.outlineColor = '#D096FF';
+	} else if (playerSelection === "scissors" && computerSelection === "paper") {
+		player++;
+		boxVs.style.outlineColor = '#D096FF';
+	} else if (playerSelection === "paper" && computerSelection === "scissors") {
+		computer++;
+		boxVs.style.outlineColor = '#D096FF';
+	} else if (playerSelection === "paper" && computerSelection === "rock") {
+		computer++;
+		boxVs.style.outlineColor = '#D096FF';
+	} else if (playerSelection === "rock" && computerSelection === "paper") {
+		computer++;
+		boxVs.style.outlineColor = '#D096FF';
+	} else {
+
+	}
+
+}
+
+
+divResultsPlayer = document.querySelector('.ptsPlayer');
+divResultsPc = document.querySelector('.ptsPc');
+
+
 let player = 0;
 let computer = 0;
 
