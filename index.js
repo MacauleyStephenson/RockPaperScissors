@@ -1,6 +1,6 @@
-const aiChoice = ["a", "rock", "paper", "scissors"]
-let computerSelection
-let playerSelection
+const aiChoice = ["a", "rock", "paper", "scissors"];
+let computerSelection;
+let playerSelection;
 
 function computerPlay() {
 	// returns from starting array
@@ -33,6 +33,10 @@ function playRound(playerSelection, computerSelection) {
 
 }
 
+let player = 0;
+let computer = 0;
+
+// loops ui colouration for game logic
 function nashe(playerSelection, computerSelection) {
 	if (playerSelection === computerSelection) {
 		boxVs.style.outlineColor = '#D096FF';
@@ -64,15 +68,13 @@ function nashe(playerSelection, computerSelection) {
 divResultsPlayer = document.querySelector('.ptsPlayer');
 divResultsPc = document.querySelector('.ptsPc');
 
+const elections = document.querySelector('button');
 
-let player = 0;
-let computer = 0;
+elections.forEach(obj => obj.addEventListener('click', function () {
+	computerPlay()
 
-// //returns variables to play the game
-// playRound(playerSelection, computerSelection)
-// computerPlay()
+}));
 
-// console.log(playRound(playerSelection, computerSelection));
 
 const btnReset = document.querySelector('.reset')
 
