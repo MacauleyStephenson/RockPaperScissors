@@ -68,12 +68,49 @@ function nashe(playerSelection, computerSelection) {
 divResultsPlayer = document.querySelector('.ptsPlayer');
 divResultsPc = document.querySelector('.ptsPc');
 
+
+
+
 const elections = document.querySelector('button');
 
 elections.forEach(obj => obj.addEventListener('click', function () {
-	computerPlay()
+	playerSelection = this.value;
+	computerPlay();
+	playRound(playerSelection, computerSelection);
+	nashe(playerSelection, computerSelection);
+
+	divResultsPlayer.textContent = ` ${player}`;
+	divResultsPc.textContent = ` ${computer}`;
+	resultGames();
 
 }));
+
+const rockSvgVs = document.querySelector('.rockSvgVs');
+const paperSvgVs = document.querySelector('.paperSvgVs');
+const scissorsSvgVs = document.querySelector('.scissorsSvgVs');
+
+const rockSvgContainerUsr = document.querySelector('.rockSvgContainerUsr');
+const paperSvgContainerUsr = document.querySelector('.paperSvgContainerUsr');
+const scissorsSvgContainerUsr = document.querySelector('.scissorsSvgContainerUsr');
+
+
+const rockSvgContainerPc = document.querySelector('.rockSvgContainerPc');
+const paperSvgContainerPc = document.querySelector('.paperSvgContainerPc');
+const scissorsSvgContainerPc = document.querySelector('.scissorsSvgContainerPc');
+
+const rockSvgPcVs = document.querySelector('.rockSvgPcVs');
+const paperSvgPcVs = document.querySelector('.paperSvgPcVs');
+const scissorsSvgPcVs = document.querySelector('.scissorsSvgPcVs');
+
+// elections.forEach(obj => obj.addEventListener('click', function(){
+
+// })
+
+function resultGames() {
+	for (i = 0; i <= 5; i++) {
+		if (player < 5 && computer < 5) break;
+	};
+}
 
 
 const btnReset = document.querySelector('.reset')
@@ -90,4 +127,4 @@ btnReset.addEventListener('click', function () {
 	boxVs.style.outlineColor = '#FFFFFF';
 	title.style.color = '#FFFFFF';
 	resultFinal.style.color = '#FFFFFF';
-})
+});
