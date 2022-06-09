@@ -7,10 +7,6 @@ function computerPlay() {
 	return computerSelection = aiChoice[Math.floor(Math.random() * aiChoice.length)]
 }
 
-// //Calls AI for choice
-// const computerSelection = computerPlay()
-
-
 //Plays one round of the game through conditional logic
 function playRound(playerSelection, computerSelection) {
 	if (playerSelection === computerSelection) {
@@ -102,13 +98,39 @@ const rockSvgPcVs = document.querySelector('.rockSvgPcVs');
 const paperSvgPcVs = document.querySelector('.paperSvgPcVs');
 const scissorsSvgPcVs = document.querySelector('.scissorsSvgPcVs');
 
-// elections.forEach(obj => obj.addEventListener('click', function(){
+elections.forEach(obj => obj.addEventListener('click', function () {
 
-// })
+	switch (this.value) {
+		case 'rock':
+			rockSvgVs.classList.add('noGhost');
+			rockSvgVs.style.animation = 'transitionNoGhost .5s ease 1';
+	}
+}))
 
 function resultGames() {
 	for (i = 0; i <= 5; i++) {
+
 		if (player < 5 && computer < 5) break;
+
+		if (player > computer) {
+			divResultsFinal.textContent = 'You Win!';
+			divResultsFinal.style.animation = "colorWin 0.7s ease-in-out 1";
+			boxVs.style.outlineColor = '#0CA445';
+			title.style.color = '#0CA445';
+			resultFinal.style.color = '#0CA445';
+
+		} else if (computer > player) {
+			divResultsFinal.textContent = 'You Loose!';
+			divResultsFinal.style.animation = "colorWin 0.7s ease-in-out 1";
+			boxVs.style.outlineColor = '#D096FF';
+			title.style.color = '#D096FF';
+			resultFinal.style.color = '#D096FF';
+		}
+
+
+		rockBtn.disabled = true;
+		paperkBtn.disabled = true;
+		scissorsBtn.disabled = true;
 	};
 }
 
