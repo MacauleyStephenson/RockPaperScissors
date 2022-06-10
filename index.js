@@ -75,11 +75,11 @@ elections.forEach(obj => obj.addEventListener('click', function () {
 	playRound(playerSelection, computerSelection);
 	nashe(playerSelection, computerSelection);
 
-	divResultsPlayer.textContent = ` ${player}`;
-	divResultsPc.textContent = ` ${computer}`;
+	divResultsPlayer.textContent = `: ${player}`;
+	divResultsPc.textContent = `: ${computer} `;
 	resultGames();
-
 }));
+
 
 const rockSvgVs = document.querySelector('.rockSvgVs');
 const paperSvgVs = document.querySelector('.paperSvgVs');
@@ -104,6 +104,109 @@ elections.forEach(obj => obj.addEventListener('click', function () {
 		case 'rock':
 			rockSvgVs.classList.add('noGhost');
 			rockSvgVs.style.animation = 'transitionNoGhost .5s ease 1';
+			rockSvgContainerUsr.style.opacity = '0%';
+			rockSvgContainerUsr.style.animation = 'transitionGhost .5s ease 1';
+			paperBtn.disabled = true;
+			scissorsBtn.disabled = true;
+			rockBtn.disabled = true;
+
+			setTimeout(function () {
+				rockSvgVs.classList.remove('noGhost');
+				rockSvgVs.style.animation = 'transitionGhost .5s ease 1';
+				rockSvgContainerUsr.style.animation = 'transitionNoGhost .5s ease 1';
+				rockSvgContainerUsr.style.opacity = '100%';
+				paperBtn.disabled = false;
+				scissorsBtn.disabled = false;
+				rockBtn.disabled = false;
+			}, 1500);
+			break;
+		case 'scissors':
+			scissorsSvgVs.classList.add('noGhost');
+			scissorsSvgVs.style.animation = 'transitionNoGhost .5s ease 1';
+			scissorsSvgContainerUsr.style.opacity = '0%';
+			scissorsSvgContainerUsr.style.animation = 'transitionGhost .5s ease 1';
+			rockBtn.disabled = true;
+			paperBtn.disabled = true;
+			scissorsBtn.disabled = true;
+
+			setTimeout(function () {
+				scissorsSvgVs.style.animation = 'transitionGhost .5s ease 1';
+				scissorsSvgVs.classList.remove('noGhost');
+				scissorsSvgContainerUsr.style.animation = 'transitionNoGhost .5s ease 1';
+				scissorsSvgContainerUsr.style.opacity = '100%';
+				rockBtn.disabled = false;
+				paperBtn.disabled = false;
+				scissorsBtn.disabled = false;
+
+			}, 1500);
+			break;
+		case 'paper':
+			paperSvgVs.classList.add('noGhost');
+			paperSvgVs.style.animation = 'transitionNoGhost .5s ease 1';
+			paperSvgContainerUsr.style.opacity = '0%';
+			paperSvgContainerUsr.style.animation = 'transitionGhost .5s ease 1';
+			rockBtn.disabled = true;
+			scissorsBtn.disabled = true;
+			paperBtn.disabled = true;
+			setTimeout(function () {
+				paperSvgVs.style.animation = 'transitionGhost .5s ease 1';
+				paperSvgVs.classList.remove('noGhost');
+
+				paperSvgContainerUsr.style.animation = 'transitionNoGhost .5s ease 1';
+				paperSvgContainerUsr.style.opacity = '100%';
+				rockBtn.disabled = false;
+				scissorsBtn.disabled = false;
+				paperBtn.disabled = false;
+			}, 1500);
+			break;
+		default:
+	}
+
+	switch (computerSelection) {
+		case 'rock':
+			rockSvgPcVs.classList.add('noGhost');
+			rockSvgPcVs.style.animation = 'transitionNoGhost .5s ease 1';
+			rockSvgContainerPc.style.animation = 'transitionGhost .5s ease 1';
+			rockSvgContainerPc.style.opacity = '0%';
+
+
+			setTimeout(function () {
+				rockSvgPcVs.style.animation = 'transitionGhost .5s ease 1';
+				rockSvgPcVs.classList.remove('noGhost');
+
+				rockSvgContainerPc.style.animation = 'transitionNoGhost .5s ease 1';
+				rockSvgContainerPc.style.opacity = '100%';
+			}, 1500);
+			break;
+		case 'scissors':
+			scissorsSvgPcVs.classList.add('noGhost');
+			scissorsSvgPcVs.style.animation = 'transitionNoGhost .5s ease 1';
+			scissorsSvgContainerPc.style.animation = 'transitionGhost .5s ease 1';
+			scissorsSvgContainerPc.style.opacity = '0%';
+
+			setTimeout(function () {
+				scissorsSvgPcVs.style.animation = 'transitionGhost .5s ease 1';
+				scissorsSvgPcVs.classList.remove('noGhost');
+
+				scissorsSvgContainerPc.style.animation = 'transitionNoGhost .5s ease 1';
+				scissorsSvgContainerPc.style.opacity = '100%';
+			}, 1500);
+			break;
+		case 'paper':
+			paperSvgPcVs.classList.add('noGhost');
+			paperSvgPcVs.style.animation = 'transitionNoGhost .5s ease 1';
+			paperSvgContainerPc.style.animation = 'transitionGhost .5s ease 1';
+			paperSvgContainerPc.style.opacity = '0%';
+
+			setTimeout(function () {
+				paperSvgPcVs.style.animation = 'transitionGhost .5s ease 1';
+				paperSvgPcVs.classList.remove('noGhost');
+
+				paperSvgContainerPc.style.animation = 'transitionNoGhost .5s ease 1';
+				paperSvgContainerPc.style.opacity = '100%';
+			}, 1500);
+			break;
+		default:
 	}
 }))
 
