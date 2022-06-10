@@ -211,7 +211,7 @@ elections.forEach(obj => obj.addEventListener('click', function () {
 }))
 
 function resultGames() {
-	for (i = 0; i <= 5; i++) {
+	for (i = 0; i <= 10; i++) {
 
 		if (player < 5 && computer < 5) break;
 
