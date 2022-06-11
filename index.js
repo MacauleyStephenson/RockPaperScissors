@@ -67,7 +67,9 @@ divResultsPc = document.querySelector('.ptsPc');
 
 
 
-const elections = document.querySelector('button');
+
+
+const elections = document.querySelectorAll('button');
 
 elections.forEach(obj => obj.addEventListener('click', function () {
 	playerSelection = this.value;
@@ -79,7 +81,6 @@ elections.forEach(obj => obj.addEventListener('click', function () {
 	divResultsPc.textContent = `: ${computer} `;
 	resultGames();
 }));
-
 
 const rockSvgVs = document.querySelector('.rockSvgVs');
 const paperSvgVs = document.querySelector('.paperSvgVs');
@@ -99,6 +100,7 @@ const paperSvgPcVs = document.querySelector('.paperSvgPcVs');
 const scissorsSvgPcVs = document.querySelector('.scissorsSvgPcVs');
 
 elections.forEach(obj => obj.addEventListener('click', function () {
+
 
 	switch (this.value) {
 		case 'rock':
@@ -208,48 +210,82 @@ elections.forEach(obj => obj.addEventListener('click', function () {
 			break;
 		default:
 	}
+
+
+
 }))
 
+const rockBtn = document.querySelector('.rockBtn');
+const paperBtn = document.querySelector('.paperBtn');
+const scissorsBtn = document.querySelector('.scissorsBtn');
+
+
+
+const divResultsFinal = document.querySelector('.result');
+
+const boxVs = document.querySelector('.boxVs');
+const title = document.querySelector('.title');
+const resultFinal = document.querySelector('.result');
+
 function resultGames() {
-	for (i = 0; i <= 10; i++) {
+
+	for (let i = 0; i <= 5; i++) {
 
 		if (player < 5 && computer < 5) break;
 
 		if (player > computer) {
 			divResultsFinal.textContent = 'You Win!';
-			divResultsFinal.style.animation = "colorWin 0.7s ease-in-out 1";
+			divResultsFinal.style.animation = "colorWin 0.7s ease-in-out 1 ";
 			boxVs.style.outlineColor = '#0CA445';
 			title.style.color = '#0CA445';
 			resultFinal.style.color = '#0CA445';
 
+
 		} else if (computer > player) {
-			divResultsFinal.textContent = 'You Loose!';
-			divResultsFinal.style.animation = "colorWin 0.7s ease-in-out 1";
+			divResultsFinal.textContent = 'You Lose!';
+			divResultsFinal.style.animation = "colorLose 0.7s ease-in-out 1 ";
+			boxVs.style.outlineColor = '#AD0900';
+			title.style.color = '#AD0900';
+			resultFinal.style.color = '#AD0900';
+
+		} else {
+			divResultsFinal.textContent = 'Tie!';
 			boxVs.style.outlineColor = '#D096FF';
 			title.style.color = '#D096FF';
 			resultFinal.style.color = '#D096FF';
+
 		}
 
-
 		rockBtn.disabled = true;
-		paperkBtn.disabled = true;
+		paperBtn.disabled = true;
 		scissorsBtn.disabled = true;
-	};
+
+	}
 }
 
 
-const btnReset = document.querySelector('.reset')
+const btnReset = document.querySelector('.reset');
 
 btnReset.addEventListener('click', function () {
 	player = 0;
 	computer = 0;
 	rockBtn.disabled = false;
 	paperBtn.disabled = false;
-	scissorskBtn.disabled = false;
+	scissorsBtn.disabled = false;
 	divResultsFinal.textContent = '';
 	divResultsPlayer.textContent = `: ${player}`;
 	divResultsPc.textContent = `: ${computer} `;
 	boxVs.style.outlineColor = '#FFFFFF';
 	title.style.color = '#FFFFFF';
 	resultFinal.style.color = '#FFFFFF';
-});
+})
+
+
+
+
+
+
+
+
+
+
