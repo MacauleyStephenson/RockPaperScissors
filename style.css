@@ -1,3 +1,18 @@
+
+:root{
+    --background:#000000;
+    --base: #150050;
+    --banckgroundDiv: #3F0071;
+    --radius: 30px;
+    --backgroundSelects: #610094;
+
+}
+*{
+    box-sizing: border-box;
+    margin: 0px;
+}
+
+
 body{
 	font-family: 'Press Start 2P', cursive;
 	background: radial-gradient(
@@ -12,6 +27,22 @@ body{
   align-items: center;
   position: relative;
 }
+
+p{
+    color: #ffffff;
+    font-size: 48px;
+}
+
+.containerTitle{
+	width: 1200px;
+	height: 80px;
+	background-color: var(--banckgroundDiv);
+	border-radius: var(--radius);
+	text-align: center;
+	line-height: 80px;
+	margin: 33px  0px 0px 0px;
+}
+
 
 .reset{
 border-radius: 50px;
