@@ -2,9 +2,9 @@
 :root{
     --background:#000000;
     --base: #150050;
-    --banckgroundDiv: #3F0071;
+    --banckgroundDiv: #2d1d7746;
     --radius: 30px;
-    --backgroundSelects: #610094;
+    --backgroundSelects: #391480;
 
 }
 *{
@@ -43,6 +43,105 @@ p{
 	margin: 33px  0px 0px 0px;
 }
 
+.title{
+	color: #ffffff;
+	transition: 33px 0px 0px 0px;
+}
+
+.containerPts{
+    width: 1200px;
+    height: 253px;
+    background-color: var(--banckgroundDiv);
+    border-radius: var(--radius);
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    margin: 0px 0px 33px 0px;
+
+}
+
+.containerIcons{
+    max-width: 150px;
+    max-height: 70px;
+    width: 150px;
+    height: 70px;
+    border-radius: 10px;
+    background-color: var(--backgroundSelects);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.result{
+    color: #ffffff;
+    transition: textContent .4s ease .0s;
+
+}
+
+.containerResult{
+    margin: 0px 283px 0px 283px;
+    max-width: 211px;
+    width: 211px;
+
+}
+
+.containerVs{
+    width: 1200px;
+    height: 350px;
+    background-color: var(--banckgroundDiv);
+    border-radius: var(--radius);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.boxVs{
+    border-radius: 50px;
+
+    max-width: 81px;
+    max-height: 81px;
+    width: 81px;
+    height: 81px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 162px 0px 160px;
+    outline-style: solid;
+    outline-width: 8px;
+    outline-color: #ffffff;
+    transition: outline-color .4s ease .0s;
+}
+
+.containerElecUsr{
+    max-width: 300px;
+    max-height: 750px;
+    width: 300px;
+    height: 750px;
+    background-color: var(--banckgroundDiv);
+    border-radius: var(--radius);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin:0px 33px 0px 0px;
+}
+
+.containerElecPc{
+    max-width: 300px;
+    max-height: 750px;
+    width: 300px;
+    height: 750px;
+    background-color: var(--banckgroundDiv);
+    border-radius: var(--radius);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin:0px 0px 0px 33px;
+
+}
 
 .reset{
 border-radius: 50px;
