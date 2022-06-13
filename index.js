@@ -4,7 +4,9 @@ let playerSelection;
 
 function computerPlay() {
 	// returns from starting array
-	return computerSelection = aiChoice[Math.floor(Math.random() * aiChoice.length)]
+	let randomNumber = Math.floor(Math.random() * 3) + 1;
+	computerSelection = aiChoice[randomNumber];
+	return computerSelection
 }
 
 //Plays one round of the game through conditional logic
@@ -12,21 +14,17 @@ function playRound(playerSelection, computerSelection) {
 	if (playerSelection == computerSelection) {
 		return "tie!";
 	} else if (playerSelection == "rock" && computerSelection == "scissors") {
-		let audio = new Audio('sounds/rock.wav');
-		audio.play();
-		return "Rock beats scissors! You win :D";
-	} else if (playerSelection == "scissors" && computerSelection == "rock") {
-		return "Rock beats scissors! You loose :(";
-	} else if (playerSelection == "scissors" && computerSelection == "paper") {
-		return "Scissors beats paper! You lose :(";
-	} else if (playerSelection == "paper" && computerSelection == "scissors") {
-		return "Scissors beats paper! You win :D";
+		return "You Win :D! Rock beats scissors";
 	} else if (playerSelection == "paper" && computerSelection == "rock") {
-		return "Paper beats rock! You lose :(";
-	} else if (playerSelection == "rock" && computerSelection == "paper") {
-		let audio = new Audio('sounds/rock.wav');
-		audio.play();
-		return "Paper beats rock! You win :D";
+		return "You Win :D! paper beats rock";
+	} else if (playerSelection == "scissors" && computerSelection == "paper") {
+		return "You Win :D! scissors beats paper";
+	} else if (playerSelection == "rock" && computerSeletion == "paper") {
+		return "You Lose :(! paper beats rock";
+	} else if (playerSelection == "paper" && computerSelection == "scissors") {
+		return "You Lose :(! scissors beats paper";
+	} else if (playerSelection == "scissors" && computerSelection == "rock") {
+		return "You Lose :(! rock beats scissors";
 	} else {
 		return "Something went wrong, please try again"
 	}
