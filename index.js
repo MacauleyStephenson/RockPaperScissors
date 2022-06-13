@@ -9,19 +9,23 @@ function computerPlay() {
 
 //Plays one round of the game through conditional logic
 function playRound(playerSelection, computerSelection) {
-	if (playerSelection === computerSelection) {
+	if (playerSelection == computerSelection) {
 		return "tie!";
-	} else if (playerSelection === "rock" && computerSelection === "scissors") {
-		return "Rock beats scissors! You lose :(";
-	} else if (playerSelection === "scissors" && computerSelection === "rock") {
+	} else if (playerSelection == "rock" && computerSelection == "scissors") {
+		let audio = new Audio('sounds/rock.wav');
+		audio.play();
 		return "Rock beats scissors! You win :D";
-	} else if (playerSelection === "scissors" && computerSelection === "paper") {
+	} else if (playerSelection == "scissors" && computerSelection == "rock") {
+		return "Rock beats scissors! You loose :(";
+	} else if (playerSelection == "scissors" && computerSelection == "paper") {
 		return "Scissors beats paper! You lose :(";
-	} else if (playerSelection === "paper" && computerSelection === "scissors") {
+	} else if (playerSelection == "paper" && computerSelection == "scissors") {
 		return "Scissors beats paper! You win :D";
-	} else if (playerSelection === "paper" && computerSelection === "rock") {
+	} else if (playerSelection == "paper" && computerSelection == "rock") {
 		return "Paper beats rock! You lose :(";
-	} else if (playerSelection === "rock" && computerSelection === "paper") {
+	} else if (playerSelection == "rock" && computerSelection == "paper") {
+		let audio = new Audio('sounds/rock.wav');
+		audio.play();
 		return "Paper beats rock! You win :D";
 	} else {
 		return "Something went wrong, please try again"
@@ -34,26 +38,38 @@ let computer = 0;
 
 // loops ui colouration for game logic
 function nashe(playerSelection, computerSelection) {
-	if (playerSelection === computerSelection) {
+	if (playerSelection == computerSelection) {
 		boxVs.style.outlineColor = '#D096FF';
-	} else if (playerSelection === "rock" && computerSelection === "scissors") {
+	} else if (playerSelection == "rock" && computerSelection == "scissors") {
 		player++;
 		boxVs.style.outlineColor = '#0CA445';
-	} else if (playerSelection === "scissors" && computerSelection === "rock") {
+		let audio = new Audio('sounds/rock.wav');
+		audio.play();
+	} else if (playerSelection == "scissors" && computerSelection == "rock") {
 		player++;
 		boxVs.style.outlineColor = '#D096FF';
-	} else if (playerSelection === "scissors" && computerSelection === "paper") {
+		let audio = new Audio('sounds/scissors.wav');
+		audio.play();
+	} else if (playerSelection == "scissors" && computerSelection == "paper") {
 		player++;
 		boxVs.style.outlineColor = '#D096FF';
-	} else if (playerSelection === "paper" && computerSelection === "scissors") {
+		let audio = new Audio('sounds/scissors.wav');
+		audio.play();
+	} else if (playerSelection == "paper" && computerSelection == "scissors") {
 		computer++;
 		boxVs.style.outlineColor = '#D096FF';
-	} else if (playerSelection === "paper" && computerSelection === "rock") {
+		let audio = new Audio('sounds/paper.wav');
+		audio.play();
+	} else if (playerSelection == "paper" && computerSelection == "rock") {
 		computer++;
 		boxVs.style.outlineColor = '#D096FF';
-	} else if (playerSelection === "rock" && computerSelection === "paper") {
+		let audio = new Audio('sounds/paper.wav');
+		audio.play();
+	} else if (playerSelection == "rock" && computerSelection == "paper") {
 		computer++;
 		boxVs.style.outlineColor = '#D096FF';
+		let audio = new Audio('sounds/rock.wav');
+		audio.play();
 	} else {
 
 	}
@@ -235,6 +251,8 @@ function resultGames() {
 
 		if (player > computer) {
 			divResultsFinal.textContent = 'You Win!';
+			let audio = new Audio('sounds/win.wav');
+			audio.play();
 			divResultsFinal.style.animation = "colorWin 0.7s ease-in-out 1 ";
 			boxVs.style.outlineColor = '#0CA445';
 			title.style.color = '#0CA445';
@@ -243,6 +261,8 @@ function resultGames() {
 
 		} else if (computer > player) {
 			divResultsFinal.textContent = 'You Lose!';
+			let audio = new Audio('sounds/lose.wav');
+			audio.play();
 			divResultsFinal.style.animation = "colorLose 0.7s ease-in-out 1 ";
 			boxVs.style.outlineColor = '#AD0900';
 			title.style.color = '#AD0900';
