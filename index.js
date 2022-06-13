@@ -14,17 +14,17 @@ function playRound(playerSelection, computerSelection) {
 	if (playerSelection == computerSelection) {
 		return "tie!";
 	} else if (playerSelection == "rock" && computerSelection == "scissors") {
-		return "You Win :D! Rock beats scissors";
+		return "You Win :D Rock beats scissors";
 	} else if (playerSelection == "paper" && computerSelection == "rock") {
-		return "You Win :D! paper beats rock";
+		return "You Win :D paper beats rock";
 	} else if (playerSelection == "scissors" && computerSelection == "paper") {
-		return "You Win :D! scissors beats paper";
-	} else if (playerSelection == "rock" && computerSeletion == "paper") {
-		return "You Lose :(! paper beats rock";
+		return "You Win :D scissors beats paper";
+	} else if (playerSelection == "rock" && computerSelection == "paper") {
+		return "You Lose :( paper beats rock";
 	} else if (playerSelection == "paper" && computerSelection == "scissors") {
-		return "You Lose :(! scissors beats paper";
+		return "You Lose :( scissors beats paper";
 	} else if (playerSelection == "scissors" && computerSelection == "rock") {
-		return "You Lose :(! rock beats scissors";
+		return "You Lose :( rock beats scissors";
 	} else {
 		return "Something went wrong, please try again"
 	}
@@ -35,7 +35,7 @@ let player = 0;
 let computer = 0;
 
 // loops ui colouration for game logic
-function nashe(playerSelection, computerSelection) {
+function style(playerSelection, computerSelection) {
 	if (playerSelection == computerSelection) {
 		boxVs.style.outlineColor = '#D096FF';
 	} else if (playerSelection == "rock" && computerSelection == "scissors") {
@@ -43,30 +43,30 @@ function nashe(playerSelection, computerSelection) {
 		boxVs.style.outlineColor = '#0CA445';
 		let audio = new Audio('sounds/rock.wav');
 		audio.play();
-	} else if (playerSelection == "scissors" && computerSelection == "rock") {
+	} else if (playerSelection == "paper" && computerSelection == "rock") {
 		player++;
 		boxVs.style.outlineColor = '#D096FF';
-		let audio = new Audio('sounds/scissors.wav');
+		let audio = new Audio('sounds/paper.wav');
 		audio.play();
 	} else if (playerSelection == "scissors" && computerSelection == "paper") {
 		player++;
 		boxVs.style.outlineColor = '#D096FF';
 		let audio = new Audio('sounds/scissors.wav');
 		audio.play();
+	} else if (playerSelection == "rock" && computerSelection == "paper") {
+		computer++;
+		boxVs.style.outlineColor = '#D096FF';
+		let audio = new Audio('sounds/rock.wav');
+		audio.play();
 	} else if (playerSelection == "paper" && computerSelection == "scissors") {
 		computer++;
 		boxVs.style.outlineColor = '#D096FF';
 		let audio = new Audio('sounds/paper.wav');
 		audio.play();
-	} else if (playerSelection == "paper" && computerSelection == "rock") {
+	} else if (playerSelection == "scissors" && computerSelection == "rock") {
 		computer++;
 		boxVs.style.outlineColor = '#D096FF';
-		let audio = new Audio('sounds/paper.wav');
-		audio.play();
-	} else if (playerSelection == "rock" && computerSelection == "paper") {
-		computer++;
-		boxVs.style.outlineColor = '#D096FF';
-		let audio = new Audio('sounds/rock.wav');
+		let audio = new Audio('sounds/scissors.wav');
 		audio.play();
 	} else {
 
@@ -89,7 +89,7 @@ elections.forEach(obj => obj.addEventListener('click', function () {
 	playerSelection = this.value;
 	computerPlay();
 	playRound(playerSelection, computerSelection);
-	nashe(playerSelection, computerSelection);
+	style(playerSelection, computerSelection);
 
 	divResultsPlayer.textContent = `: ${player}`;
 	divResultsPc.textContent = `: ${computer} `;
