@@ -37,7 +37,7 @@ let computer = 0;
 // loops ui colouration for game logic
 function style(playerSelection, computerSelection) {
 	if (playerSelection == computerSelection) {
-		boxVs.style.outlineColor = '#D096FF';
+		boxVs.style.outlineColor = '##140b3a46';
 	} else if (playerSelection == "rock" && computerSelection == "scissors") {
 		player++;
 		boxVs.style.outlineColor = '#0CA445';
@@ -45,27 +45,27 @@ function style(playerSelection, computerSelection) {
 		audio.play();
 	} else if (playerSelection == "paper" && computerSelection == "rock") {
 		player++;
-		boxVs.style.outlineColor = '#D096FF';
+		boxVs.style.outlineColor = '##0CA445';
 		let audio = new Audio('sounds/paper.wav');
 		audio.play();
 	} else if (playerSelection == "scissors" && computerSelection == "paper") {
 		player++;
-		boxVs.style.outlineColor = '#D096FF';
+		boxVs.style.outlineColor = '##0CA445';
 		let audio = new Audio('sounds/scissors.wav');
 		audio.play();
 	} else if (playerSelection == "rock" && computerSelection == "paper") {
 		computer++;
-		boxVs.style.outlineColor = '#D096FF';
+		boxVs.style.outlineColor = '##AD0900';
 		let audio = new Audio('sounds/rock.wav');
 		audio.play();
 	} else if (playerSelection == "paper" && computerSelection == "scissors") {
 		computer++;
-		boxVs.style.outlineColor = '#D096FF';
+		boxVs.style.outlineColor = '##AD0900';
 		let audio = new Audio('sounds/paper.wav');
 		audio.play();
 	} else if (playerSelection == "scissors" && computerSelection == "rock") {
 		computer++;
-		boxVs.style.outlineColor = '#D096FF';
+		boxVs.style.outlineColor = '##AD0900';
 		let audio = new Audio('sounds/scissors.wav');
 		audio.play();
 	} else {
@@ -268,9 +268,9 @@ function resultGames() {
 
 		} else {
 			divResultsFinal.textContent = 'Tie!';
-			boxVs.style.outlineColor = '#D096FF';
-			title.style.color = '#D096FF';
-			resultFinal.style.color = '#D096FF';
+			boxVs.style.outlineColor = '##140b3a46';
+			title.style.color = '##140b3a46';
+			resultFinal.style.color = '##140b3a46';
 
 		}
 
